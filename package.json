@@ -1,0 +1,30 @@
+{
+  "name": "hackernews",
+  "version": "1.0.0",
+  "description": "ninit test project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UKNC/hackernews.git"
+  },
+  "author": "VR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UKNC/hackernews/issues"
+  },
+  "homepage": "https://github.com/UKNC/hackernews#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.6",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0"
+  }
+}
