@@ -22,6 +22,8 @@ Second terminal window:
 
 Linux Mint 17, docker: Docker version 17.05.0-ce, build 89658be, docker-compose version 1.15.0, build e12f3b9
 
+For test results see [TEST_RESULTS.txt](https://github.com/UKNC/hackernews/blob/master/TEST_RESULTS.txt)
+
 
 ### API
 
