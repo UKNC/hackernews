@@ -1,0 +1,18 @@
+morpher-Inspiron-5447 hackernews # npm test
+
+> hackernews@1.0.0 test /tmp/hackernews
+> node test.js
+
+- Signing up vlad
+result: {"status":true,"result":{"__v":0,"updatedAt":"2017-08-13T09:16:03.827Z","createdAt":"2017-08-13T09:16:03.827Z","name":"vlad","pwdhash":"$2a$10$4JEiRRINQ4.1W2Q7lnfapumDjtfzrbr59y2mLL7xGmaj/bWr1gwXC","_id":"599018d3b5ca8d00011667e0"}}
+- Signing up alex
+result: {"status":true,"result":{"__v":0,"updatedAt":"2017-08-13T09:16:03.922Z","createdAt":"2017-08-13T09:16:03.922Z","name":"alex","pwdhash":"$2a$10$O3x45Y3CzaeTlQlXZd4fwe3vIjPbN/jkyZK4jQvS5r.PBxLy/YrAy","_id":"599018d3b5ca8d00011667e1"}}
+- Submitting message from vlad
+result: {"status":true,"result":{"__v":0,"updatedAt":"2017-08-13T09:16:04.010Z","createdAt":"2017-08-13T09:16:04.010Z","title":"MyFirstPost","text":"Hello from Vlad","userId":"599018d3b5ca8d00011667e0","_id":"599018d4b5ca8d00011667e2","points":0,"voters":[]}}
+Upvoting vlad's post by alex
+result: {"status":true,"result":{"__v":0,"updatedAt":"2017-08-13T09:16:04.010Z","createdAt":"2017-08-13T09:16:04.010Z","title":"MyFirstPost","text":"Hello from Vlad","userId":"599018d3b5ca8d00011667e0","_id":"599018d4b5ca8d00011667e2","points":0,"voters":[]}}
+Upvoting vlad's post by alex again
+result: {"status":true,"result":{"_id":"599018d4b5ca8d00011667e2","updatedAt":"2017-08-13T09:16:04.129Z","createdAt":"2017-08-13T09:16:04.010Z","title":"MyFirstPost","text":"Hello from Vlad","userId":"599018d3b5ca8d00011667e0","__v":0,"points":1,"voters":["599018d3b5ca8d00011667e1"]}}
+Getting all posts
+result: "{\"status\":true,\"result\":[{\"_id\":\"599018d4b5ca8d00011667e2\",\"updatedAt\":\"2017-08-13T09:16:04.130Z\",\"createdAt\":\"2017-08-13T09:16:04.010Z\",\"title\":\"MyFirstPost\",\"text\":\"Hello from Vlad\",\"userId\":\"599018d3b5ca8d00011667e0\",\"__v\":0,\"points\":1,\"voters\":[\"599018d3b5ca8d00011667e1\"]}]}"
+DONE
