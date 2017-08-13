@@ -76,6 +76,21 @@ app.post('/submit', passport.authenticate('basic', { session: false }), (req,res
   })();    
 });
 
+app.put('/edit', passport.authenticate('basic', { session: false }), (req,res)=>{
+
+  (async function() {
+    try {
+      let id      = req.body.id;
+      let text    = req.body.text; 
+      let result  = await Post.findByIdAndUpdate( id, { text: text } );
+      res.json( {status: true, result: result});
+    }
+    catch( err ) {
+      res.json( {status: false, result: err.message });
+    }
+  })();
+
+});
 
 mongoose
 .connect(ConnStr, { useMongoClient: true })
