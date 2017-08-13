@@ -114,6 +114,43 @@ app.post('/vote', passport.authenticate('basic', { session: false}), (req,res)=>
   })(); 
 });
 
+app.get('/newest', (req,res)=>{
+  const MaxPosts = 32;
+  (async function() {
+    try {
+      let n = parseInt( req.query.n );
+      if ( isNaN(n) ) 
+        n = MaxPosts;
+
+      let last = req.query.last; // last post id
+           
+      const cursor = await Post.find({}).sort( {updatedAt: -1, points: -1} ).cursor();
+      let result = [];
+      let fStarted = last ? false : true; // if last post id is unspecified, start collect posts in result right now
+      let post = await cursor.next();
+
+      let loop = 0;
+      while ( post ) {
+        if ( fStarted === false ) {
+          if ( last == post._id.toString() ) 
+            fStarted = true;
+        }
+        else {
+          if ( result.length < n ) {
+            result.push( post );
+          }
+        }
+
+        post = await cursor.next();
+      }
+      res.json( {status: true, result: result });
+
+    }
+    catch( err ) {
+      res.json({ status: false, result: err.message});
+    }
+  })(); 
+});
 
 
 mongoose
