@@ -1,8 +1,5 @@
 morpher-Inspiron-5447 hackernews # npm test
 
-> hackernews@1.0.0 test /tmp/hackernews
-> node test.js
-
 - Signing up vlad
 result: {"status":true,"result":{"__v":0,"updatedAt":"2017-08-13T09:16:03.827Z","createdAt":"2017-08-13T09:16:03.827Z","name":"vlad","pwdhash":"$2a$10$4JEiRRINQ4.1W2Q7lnfapumDjtfzrbr59y2mLL7xGmaj/bWr1gwXC","_id":"599018d3b5ca8d00011667e0"}}
 - Signing up alex
