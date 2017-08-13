@@ -58,6 +58,24 @@ app.post('/signup', (req,res)=>{
   
 });
 
+app.post('/submit', passport.authenticate('basic', { session: false }), (req,res)=>{
+  (async function() {
+    try {
+      let post = {
+        title:  req.body.title,
+        text:   req.body.text,
+        userId: req.user._id
+      };
+
+      let result = await Post.create(post);
+      res.json( {status: true, result: result });
+    }
+    catch( err ) {
+      res.json( {status: false, result: err.message} );
+    }
+  })();    
+});
+
 
 mongoose
 .connect(ConnStr, { useMongoClient: true })
