@@ -15,6 +15,7 @@ Second terminal window:
 
 ```bash
 > cd hackernews
+> npm install
 > npm test
 ```
 ### Test system
