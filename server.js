@@ -92,6 +92,30 @@ app.put('/edit', passport.authenticate('basic', { session: false }), (req,res)=>
 
 });
 
+app.post('/vote', passport.authenticate('basic', { session: false}), (req,res)=>{
+  (async function() {
+    try {
+      let id      = req.body.id;
+      let userId  = req.user._id;
+      let up      = req.body.up ? true : false; // upvoting or downvoting
+      let result;
+      if ( up ) {
+        result = await Post.findOneAndUpdate({_id: id}, {$addToSet: { voters: userId }}, {"new":true} );
+      }
+      else {
+        result = await Post.findOneAndUpdate({_id: id}, {$pull: { voters: userId } }, {"new": true} );
+      }
+      result = await Post.findOneAndUpdate( {_id: id}, { $set: { points: result.voters.length }}, {"new": true} );
+      res.json( {status: true, result: result});
+    }
+    catch( err ) {
+      res.json({status: false, result: err.message});
+    }
+  })(); 
+});
+
+
+
 mongoose
 .connect(ConnStr, { useMongoClient: true })
 .then( db=>{
