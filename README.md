@@ -32,7 +32,7 @@ hackernews exposes the following endpoints:
 #### POST /signup
 { username: String, password: String }
 
-Signs up a new user. Authentication used in following requests is HTTP basic auth. ( Should be used with ssh in production )
+Signs up a new user. Authentication used in following requests is HTTP basic auth. ( Should be used with https in production )
 
 #### POST /submit 
 { title: String, text: String }
