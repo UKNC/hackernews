@@ -58,7 +58,7 @@ rp({
 
   console.log(`result: ${r}`);
   console.log(`Upvoting vlad's post by alex`);
-  rp({
+  return rp({
     method: "POST",
     uri: `${base}/vote`,
     json: true,
