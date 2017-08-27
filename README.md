@@ -1,4 +1,4 @@
-# hackernews test project for nanit
+# hackernews test project 
 
 
 ### Running
